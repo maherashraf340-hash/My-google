@@ -8,7 +8,7 @@
         h1 { color: #0077ff; }
         input { width: 60%; padding: 12px; border-radius: 25px; border: 1px solid #ccc; }
         button { padding: 12px 20px; border-radius: 25px; border: none; background: #0077ff; color: white; cursor: pointer; }
-        .result { background: white; margin: 15px auto; padding: 15px; border-radius: 10px; width: 70%; text-align: right; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow:auto; }
+        .result { background: white; margin: 15px auto; padding: 15px; border-radius: 10px; width: 70%; text-align: right; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .result a { text-decoration: none; color: #0077ff; }
     </style>
 </head>
@@ -20,16 +20,14 @@
     <form method="POST">
         <input type="text" name="query" placeholder="مثال: موبايل سامسونج" value="{{ query }}">
         <button type="submit">بحث</button>
-    </form>
+    </button>
 
     {% if results %}
         <h2>النتائج:</h2>
         {% for r in results %}
             <div class="result">
-                <img src="{{ r.img }}" style="width:100px; float:right; margin-left:15px; border-radius:8px;">
                 <h3><a href="{{ r.link }}" target="_blank">{{ r.title }}</a></h3>
                 <p><b>السعر: {{ r.price }}</b></p>
-                <div style="clear:both"></div>
             </div>
         {% endfor %}
     {% endif %}
