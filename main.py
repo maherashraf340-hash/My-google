@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 
 app = Flask(__name__)
-AFF_ID = "حط_الايدي_بتاعك_من_نون_هنا" # من noonpartners.com
+AFF_ID = "abc123xyz" # <--- غير هنا بس وحط ال ID بتاعك
 
 @app.route("/", methods=["GET", "POST"])
 def home():
